@@ -10,10 +10,5 @@
   "item.nightfall.field_notes.page_3": "I followed my own tracks back here. I never left the shelter.",
   "tooltip.nightfall.echo_bell": "Right-click to repel and stagger nearby Hollows.",
   "tooltip.nightfall.echo_bell.cooldown": "45-second cooldown",
-  "message.nightfall.echo_bell": "The bell knocks it back into the dark.",
-  "message.nightfall.whisper_1": "I heard you come back.",
-  "message.nightfall.whisper_2": "Someone was standing by the door.",
-  "message.nightfall.whisper_3": "You left the light on for me.",
-  "message.nightfall.whisper_4": "Don't look behind you.",
-  "message.nightfall.woke_up": "You woke before the dream was over."
+  "message.nightfall.echo_bell": "The bell knocks it back into the dark."
 }

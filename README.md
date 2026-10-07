@@ -4,8 +4,8 @@ A slow-burn Forge 1.20.1 horror mod. The goal is not to keep a fear meter full, 
 
 ## The experience
 
-- **The first days are quiet.** Small anomalies are rolled independently per player and per in-game day. Sometimes nothing happens; sometimes a cave sound comes from behind you or a short, private whisper appears in chat. Waking from sleep has its own rare anomaly chance.
-- **The Hollow is a watcher, not a buffed zombie.** It is rare, silent while observing, and only naturally appears in dark Overworld locations after the configured early-game grace period.
+- **The first days are quiet.** Small anomalies are rolled independently per player and per in-game day. After the grace period, sometimes a distant figure is staged just outside your view in a dark patch; if no safe place is available, cave ambience sounds from behind you. There are no chat pop-ups explaining the scare. Waking from sleep has its own rare audio anomaly.
+- **The Hollow is a watcher, not a buffed zombie.** It is rare and silent while observing. After the configured early-game grace period, it can appear naturally or as a distant anomaly sighting in dark Overworld locations.
 - **It has three behaviors:** it watches from a distance; it creeps closer when you are not looking; and if you corner or attack it, it hunts for a short burst. If you stare at it long enough, it vanishes. A hit can briefly blind you.
 - **The Echo Bell is a countermeasure.** Craft it from copper, iron, amethyst, and an Echo Shard. Right-click to damage, stagger, and drive nearby Hollows back into their watching behavior. It has a 45-second cooldown.
 - **Abandoned sites** give exploration a purpose. Rare roadside waystations and raised watchposts contain survival supplies, occasional Echo Shards, and **Field Notes** with a small unfolding story. They generate in new Overworld chunks; use `/locate structure nightfall:abandoned_site` when testing.
@@ -33,9 +33,9 @@ The mod jar will be in `build/libs/`. To launch the development client, run `./g
 
 Forge creates `config/nightfall-common.toml`:
 
-- `anomaliesEnabled` — enables the rare ambient and sleep anomalies.
-- `firstHollowDay` — earliest Overworld day for natural Hollow spawns (default `5`).
-- `dailyAnomalyChance` — percent chance of one subtle anomaly per player per day after day 1 (default `14`).
-- `sleepAnomalyChance` — percent chance of a brief anomaly each time a player wakes (default `5`).
+- `anomaliesEnabled` — enables rare distant sightings and ambient sound cues.
+- `firstHollowDay` — earliest Overworld day for distant Hollow sightings and natural spawns (default `5`).
+- `dailyAnomalyChance` — percent chance of one distant watcher sighting in darkness, or an ambient cue if no safe sighting location is found, per player per day after day 1 (default `14`).
+- `sleepAnomalyChance` — percent chance of a quiet sound cue behind the player when waking (default `5`).
 
 For both chances, a higher percentage means more frequent events. Natural spawn frequency is intentionally very low and is defined by a Forge biome modifier; datapacks can adjust it.
