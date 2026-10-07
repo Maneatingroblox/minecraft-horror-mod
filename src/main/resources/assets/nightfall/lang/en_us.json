@@ -1,0 +1,14 @@
+{
+  "itemGroup.nightfall": "Nightfall",
+  "entity.nightfall.the_hollow": "The Hollow",
+  "item.nightfall.echo_bell": "Echo Bell",
+  "item.nightfall.the_hollow_spawn_egg": "The Hollow Spawn Egg",
+  "item.nightfall.field_notes": "Water-damaged Field Notes",
+  "tooltip.nightfall.field_notes": "Right-click to read the next page.",
+  "item.nightfall.field_notes.page_1": "I found a shelter where the old trail disappears into the trees.",
+  "item.nightfall.field_notes.page_2": "The figure is still outside. It only moves when I look away.",
+  "item.nightfall.field_notes.page_3": "I followed my own tracks back here. I never left the shelter.",
+  "tooltip.nightfall.echo_bell": "Right-click to repel and stagger nearby Hollows.",
+  "tooltip.nightfall.echo_bell.cooldown": "45-second cooldown",
+  "message.nightfall.echo_bell": "The bell knocks it back into the dark."
+}

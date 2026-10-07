@@ -1,0 +1,15 @@
+{
+  "structures": [
+    {
+      "structure": "nightfall:abandoned_site",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "salt": 184392617,
+    "spacing": 32,
+    "separation": 8,
+    "spread_type": "linear"
+  }
+}
