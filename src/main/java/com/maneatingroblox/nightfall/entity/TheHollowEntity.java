@@ -5,7 +5,6 @@ import net.minecraft.core.BlockPos;
 import net.minecraft.network.syncher.EntityDataAccessor;
 import net.minecraft.network.syncher.EntityDataSerializers;
 import net.minecraft.network.syncher.SynchedEntityData;
-import net.minecraft.sounds.SoundEvent;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.sounds.SoundSource;
 import net.minecraft.util.RandomSource;
@@ -23,7 +22,6 @@ import net.minecraft.world.entity.ai.goal.MeleeAttackGoal;
 import net.minecraft.world.entity.ai.goal.RandomLookAroundGoal;
 import net.minecraft.world.entity.ai.goal.target.HurtByTargetGoal;
 import net.minecraft.world.entity.monster.Monster;
-import net.minecraft.world.entity.monster.Zombie;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.level.ClipContext;
 import net.minecraft.world.level.Level;
@@ -35,7 +33,7 @@ import net.minecraft.world.phys.Vec3;
 import java.util.Comparator;
 
 /** A quiet watcher that only becomes openly hostile when it is cornered or provoked. */
-public class TheHollowEntity extends Zombie {
+public class TheHollowEntity extends Monster {
     private static final int WATCHING = 0;
     private static final int STALKING = 1;
     private static final int HUNTING = 2;
@@ -45,7 +43,7 @@ public class TheHollowEntity extends Zombie {
     private int behaviorTicks;
     private int watchedTicks;
 
-    public TheHollowEntity(EntityType<? extends Zombie> type, Level level) {
+    public TheHollowEntity(EntityType<? extends TheHollowEntity> type, Level level) {
         super(type, level);
         this.xpReward = 12;
     }
@@ -65,7 +63,7 @@ public class TheHollowEntity extends Zombie {
     }
 
     public static AttributeSupplier.Builder createAttributes() {
-        return Zombie.createAttributes()
+        return Monster.createMonsterAttributes()
                 .add(Attributes.MAX_HEALTH, 36.0D)
                 .add(Attributes.MOVEMENT_SPEED, 0.18D)
                 .add(Attributes.ATTACK_DAMAGE, 7.0D)
@@ -184,6 +182,10 @@ public class TheHollowEntity extends Zombie {
         this.getNavigation().moveTo(player, 1.45D);
     }
 
+    public boolean isHunting() {
+        return this.getBehavior() == HUNTING;
+    }
+
     private int getBehavior() {
         return this.entityData.get(BEHAVIOR);
     }
@@ -238,21 +240,6 @@ public class TheHollowEntity extends Zombie {
             player.addEffect(new MobEffectInstance(MobEffects.BLINDNESS, 40, 0, true, false, false));
         }
         return hit;
-    }
-
-    @Override
-    protected SoundEvent getAmbientSound() {
-        return this.getBehavior() == HUNTING ? SoundEvents.ZOMBIE_AMBIENT : null;
-    }
-
-    @Override
-    protected SoundEvent getHurtSound(DamageSource damageSource) {
-        return SoundEvents.ZOMBIE_HURT;
-    }
-
-    @Override
-    protected SoundEvent getDeathSound() {
-        return SoundEvents.ZOMBIE_DEATH;
     }
 
     @Override
