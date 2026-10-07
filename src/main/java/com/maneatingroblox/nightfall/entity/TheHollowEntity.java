@@ -204,7 +204,7 @@ public class TheHollowEntity extends Zombie {
         if (behavior != HUNTING) {
             this.setTarget(null);
         } else if (!this.level().isClientSide) {
-            this.level().playSound(null, this.blockPosition(), SoundEvents.AMBIENT_CAVE,
+            this.level().playSound(null, this.blockPosition(), SoundEvents.AMBIENT_CAVE.value(),
                     SoundSource.HOSTILE, 0.8F, 0.58F);
         }
     }
@@ -256,7 +256,7 @@ public class TheHollowEntity extends Zombie {
     }
 
     @Override
-    protected float getVoicePitch() {
+    public float getVoicePitch() {
         return 0.58F + this.random.nextFloat() * 0.12F;
     }
 }

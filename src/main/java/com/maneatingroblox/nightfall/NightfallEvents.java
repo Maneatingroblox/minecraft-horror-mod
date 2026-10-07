@@ -60,7 +60,7 @@ public final class NightfallEvents {
     private static void playWhisperFromBehind(ServerPlayer player) {
         Vec3 behind = player.position().subtract(player.getLookAngle().normalize().scale(7.0D));
         player.level().playSound(null, behind.x, behind.y + 1.0D, behind.z,
-                SoundEvents.AMBIENT_CAVE, SoundSource.AMBIENT, 0.85F,
+                SoundEvents.AMBIENT_CAVE.value(), SoundSource.AMBIENT, 0.85F,
                 0.55F + player.getRandom().nextFloat() * 0.15F);
     }
 
