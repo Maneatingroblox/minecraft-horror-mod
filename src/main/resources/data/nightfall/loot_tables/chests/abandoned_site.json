@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:chest",
+  "pools": [
+    {
+      "rolls": {
+        "min": 4.0,
+        "max": 7.0
+      },
+      "bonus_rolls": 0.0,
+      "entries": [
+        { "type": "minecraft:item", "name": "minecraft:torch", "weight": 10 },
+        { "type": "minecraft:item", "name": "minecraft:bread", "weight": 8 },
+        { "type": "minecraft:item", "name": "minecraft:coal", "weight": 7 },
+        { "type": "minecraft:item", "name": "minecraft:iron_ingot", "weight": 5 },
+        { "type": "minecraft:item", "name": "minecraft:amethyst_shard", "weight": 4 },
+        { "type": "minecraft:item", "name": "minecraft:string", "weight": 4 },
+        { "type": "minecraft:item", "name": "minecraft:compass", "weight": 2 },
+        { "type": "minecraft:item", "name": "nightfall:field_notes", "weight": 2 },
+        { "type": "minecraft:item", "name": "minecraft:echo_shard", "weight": 1 },
+        { "type": "minecraft:item", "name": "minecraft:glow_ink_sac", "weight": 1 }
+      ]
+    }
+  ]
+}
